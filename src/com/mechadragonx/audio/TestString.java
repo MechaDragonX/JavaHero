@@ -15,13 +15,12 @@ public class TestString {
     public static void main(String[] args) {
         Scanner input = null;
         try {
-            input = new Scanner(new File("string.txt"));
+            input = new Scanner(new File("./data/string.txt"));
         } catch (FileNotFoundException e) {
-            System.out.println("You must copy string.txt to this directory" +
-                               " before running the testing program.");
+            System.out.println("You must copy string.txt to \"/data\" before running the testing program.");
             System.exit(1);
         }
-        testWithArray(input);
+        // testWithArray(input);
         testWithFrequency(input);
         System.out.println("passed all tests");
     }
@@ -30,33 +29,33 @@ public class TestString {
     //       values showing what the sample value should be as we make repeated
     //       calls on tic
     // post: program is halted if an error is encountered
-    public static void testWithArray(Scanner input) {
-        int cases = input.nextInt();
-        for (int i = 0; i < cases; i++) {
-            int size = input.nextInt();
-            double[] data = new double[size];
-            for (int j = 0; j < data.length; j++)
-                data[j] = input.nextDouble();
-            System.out.println("Testing GuitarString with this array:");
-            System.out.println(Arrays.toString(data));
-            GuitarString g = new GuitarString(data);
-
-            for (int time = 0; time < 10 * data.length; time++) {
-                double sample = input.nextDouble();
-                double sample2 = g.sample();
-                if (Math.abs(sample - sample2) > EPSILON) {
-                    System.out.println("ERROR: Sample mismatch");
-                    System.out.println("  when time = " + time);
-                    System.out.println("  sample should = " + sample);
-                    System.out.println("  string reports sample = " + sample2);
-                    System.exit(1);
-                }
-                g.tic();
-            }
-            System.out.println("passed");
-            System.out.println();
-        }
-    }
+//    public static void testWithArray(Scanner input) {
+//        int cases = input.nextInt();
+//        for (int i = 0; i < cases; i++) {
+//            int size = input.nextInt();
+//            double[] data = new double[size];
+//            for (int j = 0; j < data.length; j++)
+//                data[j] = input.nextDouble();
+//            System.out.println("Testing GuitarString with this array:");
+//            System.out.println(Arrays.toString(data));
+//            GuitarString g = new GuitarString(data);
+//
+//            for (int time = 0; time < 10 * data.length; time++) {
+//                double sample = input.nextDouble();
+//                double sample2 = g.sample();
+//                if (Math.abs(sample - sample2) > EPSILON) {
+//                    System.out.println("ERROR: Sample mismatch");
+//                    System.out.println("  when time = " + time);
+//                    System.out.println("  sample should = " + sample);
+//                    System.out.println("  string reports sample = " + sample2);
+//                    System.exit(1);
+//                }
+//                g.tic();
+//            }
+//            System.out.println("passed");
+//            System.out.println();
+//        }
+//    }
 
     // pre : input file has a series of test cases listing a frequency and ring
     //       buffer size to test

@@ -4,8 +4,8 @@
 package com.mechadragonx.audio;
 
 public class GuitarLite implements Guitar {
-    private GuitarString stringA;
-    private GuitarString stringC;
+    public GuitarString stringA;
+    public GuitarString stringC;
 
     // create two guitar strings, for concert A and C
     public GuitarLite() {
@@ -17,9 +17,9 @@ public class GuitarLite implements Guitar {
 
     public void playNote(int pitch) {
         if (pitch == 12) {
-            stringA.pluck();
+            stringA.pluck('a');
         } else if (pitch == 15) {
-            stringC.pluck();
+            stringC.pluck('c');
         }
     }
 

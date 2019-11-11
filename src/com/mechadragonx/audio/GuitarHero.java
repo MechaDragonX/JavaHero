@@ -7,7 +7,7 @@ package com.mechadragonx.audio;
 
 public class GuitarHero {
     public static void main(String[] args) {
-        Guitar g = new GuitarLite();
+        GuitarLite g = new GuitarLite();
         // this is an infinite loop--user must quit the application
         for (;;) {
             // check if the user has typed a key; if so, process it   
@@ -15,6 +15,8 @@ public class GuitarHero {
                 char key = Character.toLowerCase(StdDraw.nextKeyTyped());
                 if (g.hasString(key)) {
                     g.pluck(key);
+//                    if(key == 'a') System.out.println(g.stringA.getSamples());
+//                    else if(key == 'c') System.out.println(g.stringC.getSamples());
                 } else {
                     System.out.println("bad key: " + key);
                     System.out.println((int) key);

@@ -17,5 +17,5 @@ public class Guitar37 implements Guitar {
     @Override
     public void tic() { }
     @Override
-    public int time() { return 0; }
+    public int time() { return -1; }
 }
